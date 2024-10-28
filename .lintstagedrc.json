@@ -1,0 +1,4 @@
+{
+  "**/*.scss": ["yarn format", "yarn stylelint"],
+  "**/*.{ts,tsx}": ["yarn format", "yarn eslint"]
+}
