@@ -26,3 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### `yarn release`
 
 <b>ESlint, StyleLint, Commitlint, Lint Staged and Husky used. Please refer config files and git hooks files in the project directory. </b>
+
+## Env Variables
+
+In the project root there is .env file. You can create `.env.local` or just replace your keys with dummy words.
