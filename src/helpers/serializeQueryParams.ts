@@ -1,6 +1,5 @@
 export const serializeQueryParams = (
-  searchParams: URLSearchParams,
-  append: string[]
+  searchParams: URLSearchParams
 ): string[] => {
   const query = [];
   for (const [key, value] of searchParams.entries()) {
@@ -8,5 +7,5 @@ export const serializeQueryParams = (
       query.push(`${key}=${value}`);
     }
   }
-  return query.concat(append);
+  return query;
 };

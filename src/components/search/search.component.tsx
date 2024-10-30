@@ -5,6 +5,8 @@ import { Button } from '@/components';
 
 import { useLazyGetMoviesQuery } from '@/api/movie.api';
 
+import { getQueryParamsFromSearch } from '@/helpers/getQueryParamsFromSearch';
+
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './search.module.scss';
 
@@ -29,18 +31,14 @@ const Search = () => {
 
   const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const query = [];
-    for (const [key, value] of Object.entries(formState)) {
-      if (value) {
-        query.push(`${key}=${value}`);
-      }
-    }
-    trigger(query);
-    setSearchParams(formState);
+    const params = { ...formState, page: '1' };
+    trigger(getQueryParamsFromSearch(params));
+    setSearchParams(params);
   };
 
   React.useEffect(() => {
-    trigger(['s=pokemon']);
+    trigger(['s=pokemon&page=1']);
+    setSearchParams({ s: 'pokemon', page: '1' });
   }, []);
 
   return (

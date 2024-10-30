@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   useReactTable,
   getCoreRowModel,
@@ -10,7 +11,6 @@ import { Poster } from '@/components';
 import type { IMoviePreview } from '@/api/movie.api';
 
 import styles from './table.module.scss';
-import { Link } from 'react-router-dom';
 
 interface ITable {
   data: IMoviePreview[];
@@ -45,11 +45,8 @@ const Table = ({ data }: ITable) => {
   const table = useReactTable({
     data,
     columns,
-    // pageCount: dataQuery.data?.pageCount ?? -1, //you can now pass in `rowCount` instead of pageCount and `pageCount` will be calculated internally (new in v8.13.0)
-    // rowCount: dataQuery.data?.rowCount, // new in v8.13.0 - alternatively, just pass in `pageCount` directly
     getCoreRowModel: getCoreRowModel(),
     manualPagination: true,
-    debugTable: true,
   });
 
   return (

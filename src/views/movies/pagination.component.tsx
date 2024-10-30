@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { useLazyGetMoviesQuery } from '@/api/movie.api';
@@ -12,25 +11,31 @@ const DEFAULT_PAGE_SIZE = 10;
 
 const Pagination = () => {
   const { total } = useAppSelector((state) => state.movies);
-  const [searchParams] = useSearchParams();
-  const totalPage = Math.floor(total / DEFAULT_PAGE_SIZE);
+  const [searchParams, setSearchParams] = useSearchParams();
   const [trigger] = useLazyGetMoviesQuery();
-  const [page, setPage] = React.useState(0);
+  const totalPage = Math.floor(total / DEFAULT_PAGE_SIZE);
+  const page = Number(searchParams.get('page'));
 
   const prevPage = () => {
-    if (page === 0) {
+    if (page === 1) {
       return;
     }
-    setPage(page - 1);
-    trigger(serializeQueryParams(searchParams, [`page=${page - 1}`]));
+    setSearchParams((params) => {
+      params.set('page', String(page - 1));
+      return params;
+    });
+    trigger(serializeQueryParams(searchParams));
   };
 
   const nextPage = () => {
     if (page === totalPage) {
       return;
     }
-    setPage(page + 1);
-    trigger(serializeQueryParams(searchParams, [`page=${page + 1}`]));
+    setSearchParams((params) => {
+      params.set('page', String(page + 1));
+      return params;
+    });
+    trigger(serializeQueryParams(searchParams));
   };
 
   return (
@@ -43,7 +48,7 @@ const Pagination = () => {
       <div>
         <span>Page</span>
         <ul>
-          <li>{page + 1}</li>
+          <li>{page}</li>
         </ul>
         <span>of {totalPage}</span>
       </div>
