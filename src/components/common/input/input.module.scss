@@ -1,0 +1,23 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+.input__wrapper {
+  max-width: 100%;
+  width: 100%;
+}
+
+.input {
+  display: block;
+  border: 1px solid v.$bg-dark;
+  font-family: v.$font-family;
+  font-size: f.toRem(14);
+  font-weight: 400;
+  color: v.$dark;
+  background-color: v.$white;
+  letter-spacing: 0.89px;
+  padding: f.toRem(0) f.toRem(14);
+  border-radius: 8px;
+  min-height: f.toRem(40);
+  max-width: 100%;
+  width: 100%;
+}

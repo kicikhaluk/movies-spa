@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { useSearchParams } from 'react-router-dom';
-import DatePicker from 'react-datepicker';
-import { Button } from '@/components';
+
+import { Button, DatePicker, Input, Select } from '@/components';
 
 import { useLazyGetMoviesQuery } from '@/api/movie.api';
 
 import { getQueryParamsFromSearch } from '@/helpers/getQueryParamsFromSearch';
 
-import 'react-datepicker/dist/react-datepicker.css';
 import styles from './search.module.scss';
 
 const Search = () => {
@@ -52,35 +51,24 @@ const Search = () => {
               y: String(date ? date.getFullYear() : ''),
             });
           }}
-          isClearable
           selected={formState.y ? new Date(formState.y) : null}
-          showYearPicker
-          placeholderText='Year'
-          dateFormat='yyyy'
         />
-        <select
-          name='type'
-          onChange={onChangeHandler}
-          value={formState.type}
-          className={styles.filter}
-        >
+        <Select name='type' onChange={onChangeHandler} value={formState.type}>
           <option value=''>Type</option>
           <option value='movie'>Movies</option>
           <option value='series'>TV Series</option>
           <option value='episode'>Episode</option>
-        </select>
-        <div className={styles.input_wrapper}>
-          <input
-            type='search'
-            name='s'
-            className={styles.input}
-            value={formState.s}
-            onChange={onChangeHandler}
-            placeholder='Search Movie Name'
-            required
-          />
-        </div>
-        <Button type='submit' label='Search' />
+        </Select>
+        <Input
+          type='search'
+          name='s'
+          value={formState.s}
+          onChange={onChangeHandler}
+          placeholder='Search Movie Name'
+          required
+          wrapperClassName={styles.input_wrapper}
+        />
+        <Button type='submit' variant='primary' label='Search' />
       </div>
     </form>
   );

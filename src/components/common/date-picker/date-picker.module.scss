@@ -1,0 +1,11 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+.datepicker {
+  input {
+    min-height: f.toRem(40);
+    border-radius: 8px;
+    border: 1px solid v.$bg-dark;
+    padding: f.toRem(6) f.toRem(14);
+  }
+}

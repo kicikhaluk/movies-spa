@@ -1,0 +1,19 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+.select {
+  border: 1px solid v.$bg-dark;
+  display: block;
+  font-family: v.$font_family;
+  font-size: f.toRem(14);
+  font-weight: 500;
+  color: v.$dark;
+  letter-spacing: 0.89px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: f.toRem(40);
+  padding: f.toRem(6) f.toRem(14);
+  border-radius: 8px;
+  background-color: v.$white;
+}

@@ -10,6 +10,7 @@
     align-items: center;
     width: 100%;
     max-width: 100%;
+    gap: f.toRem(8);
   }
 
   .input_wrapper {
@@ -19,15 +20,6 @@
 
   .filter {
     padding: f.toRem(8);
-    background-color: v.$bg-light;
-    border: 1px solid v.$bg-light;
-  }
-
-  .input {
-    display: block;
-    padding: f.toRem(8);
-    width: 100%;
-    border-radius: 8px;
     background-color: v.$bg-light;
     border: 1px solid v.$bg-light;
   }
