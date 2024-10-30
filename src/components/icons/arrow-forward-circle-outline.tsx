@@ -1,5 +1,8 @@
 import * as React from 'react';
-const SvgArrowForwardCircleOutline = (props) => (
+import { JSX } from 'react/jsx-runtime';
+const SvgArrowForwardCircleOutline = (
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     className='arrow-forward-circle-outline_svg__ionicon'

@@ -1,5 +1,8 @@
 import * as React from 'react';
-const SvgAppsOutline = (props) => (
+import { JSX } from 'react/jsx-runtime';
+const SvgAppsOutline = (
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     className='apps-outline_svg__ionicon'
