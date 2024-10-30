@@ -1,0 +1,5 @@
+@use '@/styles/functions' as f;
+
+.poster {
+  width: f.toRem(48);
+}

@@ -1,0 +1,31 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: v.$bg-light;
+  padding: f.toRem(24);
+
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: v.$website-width;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: f.toRem(8);
+
+    &_item {
+      padding: f.toRem(8);
+    }
+  }
+}

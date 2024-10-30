@@ -1,0 +1,34 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+.search {
+  max-width: f.toRem(800);
+  width: 100%;
+
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .input_wrapper {
+    display: flex;
+    flex: 1;
+  }
+
+  .filter {
+    padding: f.toRem(8);
+    background-color: v.$bg-light;
+    border: 1px solid v.$bg-light;
+  }
+
+  .input {
+    display: block;
+    padding: f.toRem(8);
+    width: 100%;
+    border-radius: 8px;
+    background-color: v.$bg-light;
+    border: 1px solid v.$bg-light;
+  }
+}

@@ -9,7 +9,8 @@
   padding: 0;
   box-sizing: border-box;
 
-  &::before {
+  &::before,
+  &::after {
     box-sizing: inherit;
   }
 }

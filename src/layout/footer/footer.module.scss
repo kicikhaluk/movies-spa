@@ -1,0 +1,16 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+.footer {
+  background-color: v.$bg-light;
+  padding: f.toRem(24);
+
+  &_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: v.$website-width;
+    width: 100%;
+    margin: 0 auto;
+  }
+}

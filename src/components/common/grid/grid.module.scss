@@ -1,0 +1,9 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: f.toRem(16) f.toRem(24);
+}

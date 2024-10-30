@@ -1,0 +1,24 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+.table_wrapper {
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid v.$gray;
+
+  th,
+  td {
+    border-bottom: 1px solid v.$gray;
+    border-right: 1px solid v.$gray;
+    padding: f.toRem(8);
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: v.$bg-light;
+  }
+}

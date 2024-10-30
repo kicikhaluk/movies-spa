@@ -1,0 +1,73 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+%button-shared {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: 0;
+  user-select: none;
+  appearance: none;
+  text-decoration: none;
+  font-family: v.$font_family;
+  font-weight: 400;
+  font-size: f.toRem(14);
+  line-height: f.toRem(24);
+  padding: f.toRem(8) f.toRem(12);
+  border-radius: 4px;
+  min-width: f.toRem(64);
+}
+
+.button {
+  @extend %button-shared;
+
+  &_icon {
+    padding: f.toRem(8);
+    min-width: f.toRem(48);
+
+    .icon {
+      width: f.toRem(20);
+      height: f.toRem(20);
+    }
+  }
+
+  &_primary {
+    background-color: v.$primary;
+    color: v.$white;
+  }
+
+  &--size-small {
+    padding: f.toRem(4) f.toRem(10);
+    font-size: f.toRem(12);
+  }
+
+  &--size-medium {
+    font-size: f.toRem(16);
+    padding: f.toRem(8) f.toRem(12);
+  }
+
+  &--txt-uppercase {
+    text-transform: uppercase;
+  }
+
+  .addon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: f.toRem(14);
+    height: f.toRem(14);
+
+    &_before {
+      margin-right: f.toRem(4);
+    }
+
+    &_after {
+      margin-left: f.toRem(4);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use '@/styles/variables' as v;
+@use '@/styles/functions' as f;
+
+.card {
+  position: relative;
+  background-color: v.$bg-light;
+  color: v.$dark;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  box-shadow:
+    rgba($color: #32325d, $alpha: 25%) 0 2px 5px -1px,
+    rgba($color: #000, $alpha: 30%) 0 1px 3px -1px;
+
+  &_meta {
+    padding: f.toRem(16);
+  }
+
+  &_cover {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 2/3;
+  }
+}
