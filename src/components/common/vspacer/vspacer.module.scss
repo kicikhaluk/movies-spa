@@ -1,0 +1,23 @@
+@use '@/styles/functions' as f;
+
+.spacing {
+  &--sm {
+    margin-bottom: f.toRem(16);
+  }
+
+  &--md {
+    margin-bottom: f.toRem(24);
+  }
+
+  &--lg {
+    margin-bottom: f.toRem(36);
+  }
+
+  &--xl {
+    margin-bottom: f.toRem(48);
+  }
+
+  &--xxl {
+    margin-bottom: f.toRem(72);
+  }
+}

@@ -1,0 +1,92 @@
+@use '@/styles/functions' as f;
+
+.stack {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &--d-row {
+    flex-direction: row;
+  }
+
+  &--d-column {
+    flex-direction: column;
+  }
+
+  &--d-column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  &--d-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &--align-flex-start {
+    align-items: flex-start;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-flex-end {
+    align-items: flex-end;
+  }
+
+  &--align-stretch {
+    align-items: stretch;
+  }
+
+  &--align-baseline {
+    align-items: baseline;
+  }
+
+  &--justify-flex-start {
+    justify-content: flex-start;
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--justify-flex-end {
+    justify-content: flex-end;
+  }
+
+  &--justify-space-between {
+    justify-content: space-between;
+  }
+
+  &--justify-space-around {
+    justify-content: space-around;
+  }
+
+  &--justify-space-evenly {
+    justify-content: space-evenly;
+  }
+
+  &--s-0 {
+    gap: 0;
+  }
+
+  &--s-0\.5 {
+    gap: f.toRem(8);
+  }
+
+  &--s-1 {
+    gap: f.toRem(16);
+  }
+
+  &--s-2 {
+    gap: f.toRem(32);
+  }
+
+  &--s-4 {
+    gap: f.toRem(64);
+  }
+
+  &--s-8 {
+    gap: f.toRem(128);
+  }
+}

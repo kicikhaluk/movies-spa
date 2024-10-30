@@ -10,6 +10,7 @@ import { Poster } from '@/components';
 import type { IMoviePreview } from '@/api/movie.api';
 
 import styles from './table.module.scss';
+import { Link } from 'react-router-dom';
 
 interface ITable {
   data: IMoviePreview[];
@@ -21,7 +22,7 @@ const Table = ({ data }: ITable) => {
   const columns = [
     columnHelper.accessor('imdbID', {
       header: 'ID',
-      cell: (info) => info.getValue(),
+      cell: (info) => <Link to={info.getValue()}>{info.getValue()}</Link>,
     }),
     columnHelper.accessor('Poster', {
       header: 'Poster',

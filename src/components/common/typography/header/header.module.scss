@@ -1,0 +1,62 @@
+@use '@/styles/functions' as f;
+@use '@/styles/variables' as v;
+
+.header {
+  font-family: v.$font_family;
+  color: v.$white;
+  font-size: f.toRem(18);
+  font-weight: 400;
+  margin: 0;
+
+  &--s-sm {
+    font-size: f.toRem(18);
+  }
+
+  &--s-md {
+    font-size: f.toRem(20);
+  }
+
+  &--s-lg {
+    font-size: f.toRem(28);
+  }
+
+  &--s-xl {
+    font-size: f.toRem(40);
+  }
+
+  &--w-light {
+    font-weight: 300;
+  }
+
+  &--w-normal {
+    font-weight: 400;
+  }
+
+  &--w-medium {
+    font-weight: 500;
+  }
+
+  &--a-left {
+    text-align: left;
+  }
+
+  &--a-center {
+    text-align: center;
+  }
+
+  &--a-right {
+    text-align: right;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--white {
+    color: v.$white;
+  }
+
+  &--dark {
+    color: v.$dark;
+  }
+}
