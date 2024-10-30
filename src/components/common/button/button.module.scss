@@ -27,12 +27,19 @@
   @extend %button-shared;
 
   &_icon {
-    padding: f.toRem(8);
-    min-width: f.toRem(48);
+    padding: f.toRem(4);
+    min-width: 0;
+    width: f.toRem(32);
+    height: f.toRem(32);
+    background-color: v.$bg-light;
+    border-radius: 8px;
 
     .icon {
-      width: f.toRem(20);
-      height: f.toRem(20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: f.toRem(20);
+      color: v.$dark;
     }
   }
 

@@ -2,11 +2,7 @@
 @use '@/styles/functions' as f;
 
 .pagination {
-  display: flex;
-  align-items: center;
-  gap: f.toRem(16);
   border-radius: 8px;
   padding: f.toRem(8) f.toRem(16);
-  color: v.$white;
-  background: v.$bg-dark;
+  background: v.$primary;
 }

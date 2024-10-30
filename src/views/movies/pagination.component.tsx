@@ -1,11 +1,16 @@
 import { useSearchParams } from 'react-router-dom';
 
+import { Button, Stack, Text } from '@/components';
+import {
+  ArrowBackCircleOutline,
+  ArrowForwardCircleOutline,
+} from '@/components/icons';
+
 import { useLazyGetMoviesQuery } from '@/api/movie.api';
 import { serializeQueryParams } from '@/helpers/serializeQueryParams';
 import { useAppSelector } from '@/stores';
 
 import styles from './movies.module.scss';
-import { Button } from '@/components';
 
 const DEFAULT_PAGE_SIZE = 10;
 
@@ -39,25 +44,39 @@ const Pagination = () => {
   };
 
   return (
-    <div className={styles.pagination}>
+    <Stack
+      direction='row'
+      alignItems='center'
+      justifyContent='flex-end'
+      spacing={2}
+      className={styles.pagination}
+    >
       <Button.Icon
-        icon={'<'}
+        icon={<ArrowBackCircleOutline />}
         aria-label='Previous Page'
         onClick={prevPage}
       ></Button.Icon>
-      <div>
-        <span>Page</span>
-        <ul>
-          <li>{page}</li>
-        </ul>
-        <span>of {totalPage}</span>
-      </div>
+      <Stack direction='row' spacing={1}>
+        <Text size='lg' variant='white'>
+          Page
+        </Text>
+        <Stack as='ul'>
+          <li>
+            <Text size='lg' variant='white'>
+              {page}
+            </Text>
+          </li>
+        </Stack>
+        <Text size='lg' variant='white'>
+          of {totalPage}
+        </Text>
+      </Stack>
       <Button.Icon
-        icon={'>'}
+        icon={<ArrowForwardCircleOutline />}
         aria-label='Next Page'
         onClick={nextPage}
       ></Button.Icon>
-    </div>
+    </Stack>
   );
 };
 
