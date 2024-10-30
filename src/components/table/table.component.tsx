@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   useReactTable,
   getCoreRowModel,
@@ -17,12 +17,15 @@ interface ITable {
 }
 
 const Table = ({ data }: ITable) => {
+  const { search } = useLocation();
   const columnHelper = createColumnHelper<IMoviePreview>();
 
   const columns = [
     columnHelper.accessor('imdbID', {
       header: 'ID',
-      cell: (info) => <Link to={info.getValue()}>{info.getValue()}</Link>,
+      cell: (info) => (
+        <Link to={`${info.getValue()}${search}`}>{info.getValue()}</Link>
+      ),
     }),
     columnHelper.accessor('Poster', {
       header: 'Poster',
